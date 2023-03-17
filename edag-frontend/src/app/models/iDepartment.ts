@@ -1,4 +1,7 @@
+import { User } from "./user";
+
 export interface iDepartment {
+    id: number,
     name: string;
-    users: {name: string, birthday:string}[]
+    users: User[];
 }
