@@ -39,8 +39,13 @@
     <main class="bg-gray-900">
         <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 bg-gray-900">
             
-            <app-table></app-table>
-            <app-table></app-table>
+
+            <app-table
+                *ngFor="let department of departments" 
+                [name]="department.name"
+                [users]="department.users"
+            >
+            </app-table>
 
         </div>
     </main>

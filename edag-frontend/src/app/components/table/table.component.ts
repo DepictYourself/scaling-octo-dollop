@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
+
+    @Input()
+    name: string = "";
+
+    @Input()
+    users: {name: string, birthday:string}[]= [];
 
 }
