@@ -10,9 +10,9 @@ export class ModalComponent {
     id!: number;
 
     @Output()
-    toggleModal: EventEmitter<string> = new EventEmitter();
+    toggleModalEvent: EventEmitter<string> = new EventEmitter();
 
     onClickHandler(): void {
-        this.toggleModal.emit("modal-" + this.id);
+        this.toggleModalEvent.emit("modal-" + this.id);
     }
 }
