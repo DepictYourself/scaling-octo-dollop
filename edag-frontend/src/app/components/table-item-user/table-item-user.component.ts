@@ -1,15 +1,25 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+import {User} from "../../models/user";
 
 @Component({
-  selector: '[app-table-item-user]',
-  templateUrl: './table-item-user.component.html',
-  styleUrls: ['./table-item-user.component.css']
+    selector: '[app-table-item-user]',
+    templateUrl: './table-item-user.component.html',
+    styleUrls: ['./table-item-user.component.css']
 })
+
+
+
 export class TableItemUserComponent {
     @Input()
-    name: string = "";
-    @Input()
-    birthday: string = "";
+    user: User = {} as User;
+    @Output()
+    onDeleteUser: EventEmitter<User> = 
+        new EventEmitter()
 
+
+    onDelete(user: User) {
+        this.onDeleteUser.emit(user);
+    }
 
 }
