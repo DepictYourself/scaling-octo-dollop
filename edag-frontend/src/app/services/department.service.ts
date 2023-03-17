@@ -13,10 +13,10 @@ export class DepartmentService {
     constructor() { }
 
     getDepartments(): Observable<iDepartment[]> {
-        return from(fetch(this.apiEndpointUrl)
-        .then(res => res.json())
-        .then(data => {
-            return data;
-        })); 
+        return from(
+            fetch(this.apiEndpointUrl)
+            .then(res => res.json())
+            .then(data => data)
+        ); 
     }
 }
