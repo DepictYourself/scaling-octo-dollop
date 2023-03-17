@@ -23,8 +23,7 @@
 
             <app-table
                 *ngFor="let department of departments" 
-                [name]="department.name"
-                [users]="department.users"
+                [department]="department"
             >
             </app-table>
 
