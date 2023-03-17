@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import "flowbite";
 import { HeaderComponent } from './components/header/header.component';
 import { TableComponent } from './components/table/table.component';
+import { TableItemUserComponent } from './components/table-item-user/table-item-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    TableComponent
+    TableComponent,
+    TableItemUserComponent
   ],
   imports: [
     BrowserModule,
