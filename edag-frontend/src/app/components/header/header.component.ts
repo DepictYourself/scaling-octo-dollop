@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { iDepartment } from './iDepartment';
+import { iDepartment } from '../../models/iDepartment';
 
 @Component({
   selector: 'app-header',
