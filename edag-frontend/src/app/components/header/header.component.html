@@ -22,7 +22,8 @@
             
 
             <app-table
-                *ngFor="let department of departments" 
+                *ngFor="let department of departments; let i = index"
+                [tableIndex] = "i" 
                 [department]="department"
             >
             </app-table>
