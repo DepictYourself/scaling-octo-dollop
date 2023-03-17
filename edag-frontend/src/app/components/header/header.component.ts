@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { DepartmentService } from 'src/app/services/department.service';
+
 import { iDepartment } from '../../models/iDepartment';
 
 @Component({
@@ -9,17 +11,15 @@ import { iDepartment } from '../../models/iDepartment';
 })
 export class HeaderComponent implements OnInit{
 
-    apiEndpointUrl: string = "http://localhost:3000/departments";
-
     @Input()
     departments: iDepartment[] = [];
 
+    constructor(private departmentService: DepartmentService){
+        
+    }
     ngOnInit(): void {
-        fetch(this.apiEndpointUrl)
-        .then(res => res.json())
-        .then(data => {
-                console.log(data);
-                this.departments = data
-            });
+        this.departmentService.getDepartments().subscribe(departments => {
+            this.departments = departments;
+        })
     }
 }
