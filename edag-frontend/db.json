@@ -1,30 +1,36 @@
 {
-    "departments":[
+  "departments": [
+    {
+      "id": 1,
+      "name": "Edag PS Szoftverfejlesztés",
+      "users": [
         {
-            "name":"Edag PS Szoftverfejlesztés",
-            "users":[
-                {
-                    "name":"Nagy Gábor",
-                    "birthday":"1900-01-01"
-                },
-                {
-                    "name":"Kis Péter",
-                    "birthday":"1903-02-01"
-                }
-            ]
+          "id": 11,
+          "name": "Nagy Gábor",
+          "birthday": "1900-01-01"
         },
         {
-            "name":"Edag PS Konstrukció",
-            "users":[
-                {
-                    "name":"Kiss Gábor",
-                    "birthday":"1904-02-02"
-                },
-                {
-                    "name":"Nagy Péter",
-                    "birthday":"1902-03-03"
-                }
-            ]
+          "id": 12,
+          "name": "Kis Péter",
+          "birthday": "1903-02-01"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Edag PS Konstrukció",
+      "users": [
+        {
+          "id": 21,
+          "name": "Kiss Gábor",
+          "birthday": "1904-02-02"
+        },
+        {
+          "id": 22,
+          "name": "Nagy Péter",
+          "birthday": "1902-03-03"
+        }
+      ]
+    }
+  ]
 }
