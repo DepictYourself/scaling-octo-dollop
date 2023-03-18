@@ -21,6 +21,37 @@ export class DepartmentService {
         ); 
     }
 
+    addUser(department: iDepartment, creatableUser: {name: string, birthday: string}): Observable<iDepartment> {
+        const url = `${this.apiEndpointUrl}/${department.id}`
+
+        const newUser: User = {
+            id: this.getNewUserId(department),
+            name: creatableUser.name,
+            birthday: creatableUser.birthday
+        }
+        const newUserArray = department.users.concat(newUser);
+
+        return from(
+            fetch(url, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    users: newUserArray
+                })
+            })
+            .then(res => res.json())
+            .then(department => department)
+        );
+    }
+
+    private getNewUserId(department: iDepartment): number{
+        const userArrayLength = department.users.length;
+        const lastUser = department.users[userArrayLength - 1];
+        return lastUser.id + 1;
+    }
+
     removeUser(department: iDepartment, deletableUser: User): Observable<iDepartment> {
         const url = `${this.apiEndpointUrl}/${department.id}`
         const newUsersObj = {
