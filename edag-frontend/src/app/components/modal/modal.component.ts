@@ -12,6 +12,11 @@ export class ModalComponent {
     @Output()
     toggleModalEvent: EventEmitter<string> = new EventEmitter();
 
+    @Output()
+    newUserFormSubmitEvent: EventEmitter<{name: string, birthday: string}> = 
+        new EventEmitter();
+
+
     name: string = "";
     birthday: string = "";
 
@@ -23,9 +28,17 @@ export class ModalComponent {
         this.toggleModalEvent.emit("modal-" + this.id);
     }
 
-    submitHandler($event: Event) : void {
-        console.log("form submitted:");
-        console.log($event);
-        
+    submitHandler() : void {
+        if(!this.name){
+            alert("Please enter name");
+        }
+        if(!this.birthday){
+            alert("Please enter birthday");
+        }
+
+        this.newUserFormSubmitEvent.emit({
+            name: this.name,
+            birthday: this.birthday
+        });
     }
 }
