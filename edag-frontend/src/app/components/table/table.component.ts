@@ -40,8 +40,10 @@ export class TableComponent implements OnInit{
     }
 
     createUser(creatableUser: {name: string, birthday: string}){
-        console.log("create user");
-        console.log(creatableUser);
+        this.departmentService.addUser(this.department, creatableUser)
+            .subscribe(resDepartment => {
+                this.department = resDepartment;
+            })
 
     }
 
