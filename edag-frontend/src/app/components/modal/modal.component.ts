@@ -12,6 +12,9 @@ export class ModalComponent {
     @Output()
     toggleModalEvent: EventEmitter<string> = new EventEmitter();
 
+    name: string = "";
+    birthday: string = "";
+
     onClickHandler(): void {
         const el = document.querySelector(`#modal-${this.id} form`);
         if(el){
