@@ -19,4 +19,10 @@ export class ModalComponent {
         }
         this.toggleModalEvent.emit("modal-" + this.id);
     }
+
+    submitHandler($event: Event) : void {
+        console.log("form submitted:");
+        console.log($event);
+        
+    }
 }
