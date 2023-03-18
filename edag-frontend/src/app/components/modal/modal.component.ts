@@ -40,5 +40,7 @@ export class ModalComponent {
             name: this.name,
             birthday: this.birthday
         });
+
+        this.onClickHandler();  // Reset form and toggle modal window.
     }
 }
