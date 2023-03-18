@@ -39,6 +39,12 @@ export class TableComponent implements OnInit{
             } )
     }
 
+    createUser(creatableUser: {name: string, birthday: string}){
+        console.log("create user");
+        console.log(creatableUser);
+
+    }
+
     initModal(modalIndex: number): void {
         const modalEl: HTMLElement | null = document.getElementById("modal-"+modalIndex);
 
