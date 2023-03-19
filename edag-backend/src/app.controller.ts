@@ -10,8 +10,8 @@ export class AppController {
 
 
     @Get()
-    findAll(): string {
-        return "finding all..";
+    findAll(): Promise<Department[]> {
+        return this.appService.findAll();
     }
 
 

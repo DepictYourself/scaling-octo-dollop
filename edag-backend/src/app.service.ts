@@ -12,9 +12,9 @@ export class AppService {
 
     }
 
-    // async findAll(): Promise<DepartmentRequest> {
-    //     return await this.departmentModel.find();
-    // }
+    async findAll(): Promise<Department[]> {
+        return await this.departmentModel.find();
+    }
 
 
 
