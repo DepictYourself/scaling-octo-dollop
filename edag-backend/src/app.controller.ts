@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { EdagDto } from './DTO/edag.dto';
+import { Department } from './schemas/department.schema';
 
 @Controller()
 export class AppController {
@@ -15,10 +16,8 @@ export class AppController {
 
 
     @Post()
-    create(@Body() jsonData: EdagDto): string {
-        console.table(jsonData.departments);
-        console.table(jsonData.departments[0])
-        return `${jsonData.departments}`;
+    create(@Body() jsonData: EdagDto): Promise<Department[]> {
+        return this.appService.create(jsonData);
     }
 
 
