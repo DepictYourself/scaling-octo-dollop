@@ -1,8 +1,21 @@
 import { Injectable } from '@nestjs/common';
 
+import { Department } from './models/department.interface';
+import { User } from './models/user.interface';
+
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
-  }
+    
+
+    findAll(): {departments: Department[]} {
+        return {
+            departments: new Array<Department>()
+        }
+    }
+
+
+
+    create(departments: Department[]): void {
+        
+    } 
 }
