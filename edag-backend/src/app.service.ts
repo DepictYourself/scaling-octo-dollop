@@ -1,21 +1,32 @@
 import { Injectable } from '@nestjs/common';
 
-import { Department } from './models/department.interface';
-import { User } from './models/user.interface';
+import { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
+import { Department } from './schemas/department.schema';
+
+import { DepartmentRequest } from './models/departmentrequest.interface';
 
 @Injectable()
 export class AppService {
-    
+    constructor(@InjectModel('Department') private readonly departmentModel: Model<Department>){
 
-    findAll(): {departments: Department[]} {
-        return {
-            departments: new Array<Department>()
-        }
     }
 
+    // async findAll(): Promise<DepartmentRequest> {
+    //     return await this.departmentModel.find();
+    // }
 
 
-    create(departments: Department[]): void {
-        
+
+    async create(departmentRequest: DepartmentRequest): Promise<Department[]> {
+        const departments = departmentRequest.departments;
+        const createdDepartments = [];
+
+        for (const department of departments) {
+            const createdDepartment = await this.departmentModel.create(department);
+            createdDepartments.push(createdDepartment);
+        }
+
+        return createdDepartments;
     } 
 }
