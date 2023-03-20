@@ -1,7 +1,7 @@
 import { User } from "./user";
 
 export interface iDepartment {
-    id: number,
+    _id: string,
     name: string;
     users: User[];
 }
