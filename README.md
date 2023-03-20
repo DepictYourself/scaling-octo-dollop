@@ -6,7 +6,7 @@ prerequisits:
 
 copy the code files
 ```
-git pull https://github.com/DepictYourself/scaling-octo-dollop.git
+git clone https://github.com/DepictYourself/scaling-octo-dollop.git
 ```
 
 change into directory
