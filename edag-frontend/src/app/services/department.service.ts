@@ -9,7 +9,7 @@ import { User } from '../models/user';
 })
 export class DepartmentService {
 
-    apiEndpointUrl: string = "http://localhost:3000/";
+    apiEndpointUrl: string = "http://localhost:3000";
 
     constructor() { }
 
@@ -24,7 +24,7 @@ export class DepartmentService {
     updateDepartment(id: string, department: iDepartment): Observable<iDepartment> {
         return from(
             fetch(`${this.apiEndpointUrl}/${id}`, {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
                 },
