@@ -38,9 +38,10 @@ export class TableComponent implements OnInit{
     }
 
     createUser(creatableUser: {name: string, birthday: string}){
-        // TODO
-        throw new Error("Not implemented.");
-        
+        this.departmentService.updateDepartment(this.department._id, {
+            users: this.department.users.concat(creatableUser)
+        } as iDepartment);
+        this.department.users.push(creatableUser);
     }
 
     initModal(modalIndex: number): void {
