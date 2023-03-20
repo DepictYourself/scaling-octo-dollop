@@ -33,10 +33,8 @@ export class TableComponent implements OnInit{
     }
 
     deleteUser(user: User){
-        this.departmentService.removeUser(this.department, user)
-            .subscribe(d => {
-                this.department = d;
-            } )
+        // TODO
+        throw new Error("Not implemented.");
     }
 
     createUser(creatableUser: {name: string, birthday: string}){
@@ -44,7 +42,7 @@ export class TableComponent implements OnInit{
             .subscribe(resDepartment => {
                 this.department = resDepartment;
             })
-
+        
     }
 
     initModal(modalIndex: number): void {
