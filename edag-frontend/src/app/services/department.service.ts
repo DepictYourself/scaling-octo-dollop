@@ -21,6 +21,19 @@ export class DepartmentService {
         ); 
     }
 
+    updateDepartment(id: string, department: iDepartment): Observable<iDepartment> {
+        return from(
+            fetch(`${this.apiEndpointUrl}/${id}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(department)
+            }).then(res => res.json())
+            .then(department => department)
+        )
+    }
+
     // postDepartments(creatableDepartments: iDepartment[]): Observable<iDepartment[]> {
     //     return from(
     //         fetch(this.apiEndpointUrl, {
