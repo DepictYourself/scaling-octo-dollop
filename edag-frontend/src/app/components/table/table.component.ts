@@ -40,8 +40,8 @@ export class TableComponent implements OnInit{
     createUser(creatableUser: {name: string, birthday: string}){
         this.departmentService.updateDepartment(this.department._id, {
             users: this.department.users.concat(creatableUser)
-        } as iDepartment);
-        this.department.users.push(creatableUser);
+        } as iDepartment)
+        .subscribe(dep => this.department = dep);
     }
 
     initModal(modalIndex: number): void {
