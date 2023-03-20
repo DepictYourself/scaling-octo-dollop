@@ -1,0 +1,20 @@
+version: 3
+services:
+  angular-app:
+    container_name: edag-frontend
+    restart: always
+    build: ./edag-frontend
+    ports:
+      - '4200:4200'
+  nest-app:
+    container_name: edag-backend
+    restart: always
+    build: ./edag-backend
+    ports:
+      - '3000:3000'
+  mongodb:
+    container_name: edag-mongo
+    image: mongo:6.0.5-jammy
+    ports:
+      - '27017:27017'
+
