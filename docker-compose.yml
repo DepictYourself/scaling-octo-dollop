@@ -14,6 +14,8 @@ services:
     build: ./edag-backend
     ports:
       - '3000:3000'
+    environment:
+      - MONGO_URI=mongodb://edag-mongo:27017/edag
   mongodb:
     container_name: edag-mongo
     image: mongo:6.0.5-jammy

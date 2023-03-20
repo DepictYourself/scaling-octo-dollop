@@ -6,7 +6,7 @@ import { DepartmentSchema } from './schemas/department.schema';
 
 @Module({
     imports: [
-        MongooseModule.forRoot("mongodb://localhost:27017/edag"),
+        MongooseModule.forRoot(process.env.MONGO_URI),
         MongooseModule.forFeature([{ name: "Department", schema: DepartmentSchema }])
     ],
     controllers: [AppController],
