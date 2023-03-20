@@ -38,10 +38,8 @@ export class TableComponent implements OnInit{
     }
 
     createUser(creatableUser: {name: string, birthday: string}){
-        this.departmentService.addUser(this.department, creatableUser)
-            .subscribe(resDepartment => {
-                this.department = resDepartment;
-            })
+        // TODO
+        throw new Error("Not implemented.");
         
     }
 
