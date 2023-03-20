@@ -6,6 +6,8 @@ services:
     build: ./edag-frontend
     ports:
       - '4200:4200'
+    expose:
+      - '4200'
   nest-app:
     container_name: edag-backend
     restart: always
