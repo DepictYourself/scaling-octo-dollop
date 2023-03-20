@@ -5,6 +5,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Department } from './schemas/department.schema';
 
 import { DepartmentRequest } from './models/departmentrequest.interface';
+import { Department as iDepartment }  from './models/department.interface';
 
 @Injectable()
 export class AppService {
@@ -28,5 +29,11 @@ export class AppService {
         }
 
         return createdDepartments;
-    } 
+    }
+
+
+
+    async updateDepartment(id: string, department: iDepartment): Promise<Department> {
+        return await this.departmentModel.findByIdAndUpdate(id, department, {new: true});
+    }
 }
