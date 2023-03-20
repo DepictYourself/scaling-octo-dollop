@@ -1,5 +1,9 @@
 # scaling-octo-dollop
 
+prerequisits:
+-git
+-docker
+
 copy the code files
 ```
 git pull https://github.com/DepictYourself/scaling-octo-dollop.git
