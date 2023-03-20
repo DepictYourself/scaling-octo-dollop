@@ -32,9 +32,12 @@ export class TableComponent implements OnInit{
 
     }
 
-    deleteUser(user: User){
-        // TODO
-        throw new Error("Not implemented.");
+    deleteUser(removableUser: User){
+        const index = this.department.users.findIndex(user => user === removableUser);
+        this.department.users.splice(index, 1);
+        
+        this.departmentService.updateDepartment(this.department._id, this.department)
+            .subscribe(dep => this.department = dep);
     }
 
     createUser(creatableUser: {name: string, birthday: string}){
